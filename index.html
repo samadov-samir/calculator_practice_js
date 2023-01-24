@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulyator</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100vh;
+    }
+
+    #calculator {
+        margin: auto;
+        padding: 30px 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px black;
+        background: #eee;
+    }
+
+    #display {
+        width: 230px;
+        height: 40px;
+        margin: 5px;
+        border: none;
+        outline: none;
+        text-align: right;
+        box-shadow: inset 1px 1px #333;
+        color: #666;
+        font-size: 2em;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    button {
+        width: 50px;
+        height: 40px;
+        margin: 5px;
+        border: 1px solid #666;
+        box-shadow: 1px 1px 0 black;
+        border-radius: 5px;
+    }
+
+    button:active {
+        box-shadow: 0 black;
+    }
+    #eq{
+        background: orange;
+        width: 110px;
+    }
+</style>
+
+<body>
+    <!-- ========== Start Section
+    
+    <div id="calculator">
+        <div><input id="display" type="text"></div>
+        <div>
+            <button >C</button>
+            <button >
+                <= </button> 
+            <button onclick="yaz('%')">%</button>
+            <button onclick="yaz('/')">/</button>
+        </div>
+        <div>
+            <button onclick="yaz('7')">7</button>
+            <button onclick="yaz('8')">8</button>
+            <button onclick="yaz('9')">9</button>
+            <button onclick="yaz('*')">*</button>
+        </div>
+        <div>
+            <button onclick="yaz('4')">4</button>
+            <button onclick="yaz('5')">5</button>
+            <button onclick="yaz('6')">6</button>
+            <button onclick="yaz('-')">-</button>
+        </div>
+        <div>
+            <button onclick="yaz('1')">1</button>
+            <button onclick="yaz('2')">2</button>
+            <button onclick="yaz('3')">3</button>
+            <button onclick="yaz('+')">+</button>
+        </div>
+        <div>
+            <button onclick="yaz('.')">.</button>
+            <button onclick="yaz('0')">0</button>
+            <button id="eq">=</button>
+        </div>
+    ========== End Section ========== -->
+    <div id="calculator">
+        <div>
+            <input id="display" type="text" />
+        </div>
+        <div>
+            <button onclick="temizle()">C</button>
+            <button onclick="back()">🠔</button>
+            <button onclick="yaz('%')">%</button>
+            <button onclick="yaz('/')">÷</button>
+        </div>
+        <div>
+            <button onclick="yaz('7')">7</button>
+            <button onclick="yaz('8')">8</button>
+            <button onclick="yaz('9')">9</button>
+            <button onclick="yaz('*')">×</button>
+        </div>
+        <div>
+            <button onclick="yaz('4')">4</button>
+            <button onclick="yaz('5')">5</button>
+            <button onclick="yaz('6')">6</button>
+            <button onclick="yaz('-')">-</button>
+        </div>
+        <div>
+            <button onclick="yaz('1')">1</button>
+            <button onclick="yaz('2')">2</button>
+            <button onclick="yaz('3')">3</button>
+            <button onclick="yaz('+')">+</button>
+        </div>
+        <div>
+            <button onclick="yaz('.')">.</button>
+            <button onclick="yaz('0')">0</button>
+            <button onclick="hesabla()" id="eq">=</button>
+        </div>
+    </div>
+    </div>
+    <script>
+        const display = document.getElementById("display")
+        function temizle() {
+            display.value = ""
+        }
+        function back () {
+            display.value = display.value.slice(0, -1)
+        }
+        function hesabla() {
+            display.value =  eval(display.value)
+        }
+        function yaz(x) {
+            display.value += x
+        }
+    </script>
+</body>
+
+</html>
